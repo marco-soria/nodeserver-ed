@@ -8,6 +8,7 @@ app.get('/', (req, res) => {
     res.send('Hello World!');
     });
 
+app.use(express.json());
 app.use('/users', userRouter);
 
 PORT = process.env.PORT || 3002;
