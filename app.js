@@ -2,13 +2,28 @@ const express = require('express');
 const app = express();
 
 const userRouter = require('./src/routers/userRouter');
+//const userLogged = require('./src/middlewares/userLogged');
+const morgan = require('morgan');
+const path = require('path');
 
 
 app.get('/', (req, res) => {
-    res.send('Hello World!');
+    //res.send('Hello World!');
+    const data = {
+        "title": "Home",
+        "message": "Hello World!",
+        "showMessage": false
+    }
+    res.render('index', data);
     });
 
+
+app.set('views', path.join(__dirname, 'src/views'));
+app.set('view engine', 'ejs');
+
 app.use(express.json());
+app.use(morgan('dev'));
+//app.use(userLogged);
 app.use('/users', userRouter);
 
 PORT = process.env.PORT || 3002;
