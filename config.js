@@ -11,5 +11,6 @@ module.exports = {
         database: process.env.MONGO_DB,
         port: process.env.MONGO_PORT,
         connection: process.env.MONGO_CONNECTION
-    }
+    },
+    secretKey: process.env.SECRET_KEY
 }

@@ -1,6 +1,7 @@
 const UserAuth = require('../models/authModel')
 const bcrypt = require('bcrypt')
 const jwt = require('jsonwebtoken')
+const config = require('../../config') // importing config for .env
 
 class AuthService {
     
@@ -18,7 +19,8 @@ class AuthService {
     }
 
     generateToken(payload){
-        const token = jwt.sign(payload, 'secret-key')
+        //const token = jwt.sign(payload, 'secret-key')
+        const token = jwt.sign(payload, config.secretKey)
         return token
     }
 }
