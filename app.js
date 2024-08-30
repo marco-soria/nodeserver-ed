@@ -3,6 +3,7 @@ const app = express();
 
 const userRouter = require('./src/routers/userRouter');
 //const userLogged = require('./src/middlewares/userLogged');
+const connection = require('./src/database/connection');
 const morgan = require('morgan');
 const path = require('path');
 
