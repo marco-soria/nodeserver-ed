@@ -2,6 +2,7 @@ const express = require('express');
 const app = express();
 
 const userRouter = require('./src/routers/userRouter');
+const authRouter = require('./src/routers/authRouter');
 //const userLogged = require('./src/middlewares/userLogged');
 const connection = require('./src/database/connection');
 const morgan = require('morgan');
