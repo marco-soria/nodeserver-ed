@@ -27,6 +27,7 @@ app.use(express.json());
 app.use(morgan('dev'));
 //app.use(userLogged);
 app.use('/users', userRouter);
+app.use('/auth', authRouter);
 
 PORT = process.env.PORT || 3002;
 
