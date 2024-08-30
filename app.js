@@ -3,6 +3,7 @@ const app = express();
 
 const userRouter = require('./src/routers/userRouter');
 const authRouter = require('./src/routers/authRouter');
+const dashboardRouter = require('./src/routers/dashboardRouter');
 //const userLogged = require('./src/middlewares/userLogged');
 const connection = require('./src/database/connection');
 const morgan = require('morgan');
@@ -28,6 +29,7 @@ app.use(morgan('dev'));
 //app.use(userLogged);
 app.use('/users', userRouter);
 app.use('/auth', authRouter);
+app.use('/dashboard', dashboardRouter);
 
 PORT = process.env.PORT || 3002;
 
